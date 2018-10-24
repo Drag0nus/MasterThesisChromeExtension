@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Anti-Phish Inc.",
+  "description": "Validate pages certificates, protocols comparing to originals",
+  "version": "0.1.5",
+
+  "icons": {
+    "16": "icon_16.png",
+    "48": "icon_48.png",
+    "128": "icon_128.png"
+  },
+  "browser_action": {
+    "default_icon": "ic_lock.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "permissions": [
+    "tabs",
+    "https://*.blupig.net/",
+    "<all_urls>",
+    "notifications",
+    "activeTab"
+  ]
+}

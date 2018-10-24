@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="popup.js"></script>
+    <link rel="stylesheet" href="popup.css"/>
+  </head>
+  <body>
+    <p><span id="lblValidationResult" class="title-box">No HTTP(S) page loaded</span></p>
+    <p style="margin-top: 18px;"><span id="lblSubjectOrganization"><b></b></span></p>
+    <p id="pIssuer" style="display: none;">
+      <span>Issuer:</span><br />
+      <span id="lblIssuerOrganization"><b></b></span><br />
+      <span id="lblIssuerCommonName" class="text-small"></span><br />
+    </p>
+    <p><span id="lblMessage">Certificate information will display here when you open an HTTPS page.</span></p>
+
+    <!--<button id="turnOn" type="button" onclick="document.getElementById('container').style.visibility = 'visible'">Contact us!</button>-->
+    <!--<button id="turnOff" type="button" onclick="document.getElementById('container').style.visibility = 'hidden'">Hide feedback form</button>-->
+
+    <button id="turnOn">Contact us!</button>
+    <button id="turnOff">Hide feedback form!</button>
+
+    <div id="container" style="visibility: hidden">
+      <form action="http://localhost:9999/feedback/" method="post">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Your first name..">
+
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Your last name..">
+
+        <label for="webPage">Website</label>
+        <input type="text" id="webPage" name="webPage" placeholder="Website you want to report.. Current by default">
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
